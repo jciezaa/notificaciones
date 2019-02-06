@@ -21,4 +21,5 @@ Route::get('/', function () {
 //Route::get('/notificacion','TeacherController@mail');
 
 //Para utilizarlo con button
+Route::get('configuraciones','ConfigurationController@edit');
 Route::post('/notificacion','TeacherController@mail');

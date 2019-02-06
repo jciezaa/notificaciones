@@ -21,30 +21,30 @@ class TeacherController extends Controller
 	public function mail(){	
 
     	set_time_limit(0);
-        $teachers = DB::table('teachers')->select('email')->distinct()->get();
+    	//Sólo lista los emails de docentes dentro de la base de datos
+        $teachers = DB::table('teachers')->GroupBy('email')->pluck('email as email');
 
-       // Progress BAR
-        //$bar = (count($teachers));
+        //dd($teachers);
 
         foreach ($teachers as $teacher) {
 
 			$cursos = DB::table('teachers')
-	        ->where('email',$teacher->email)
+	        ->where('email',$teacher)
 	        ->distinct()
 	        ->OrderBy('asignatura','seccion')->get();
+    
 	        	 
 	        $correoAlumnos = DB::table('teachers')
 	        ->select('correoAlumno as email')
-	        ->where('email',$teacher->email)
+	        ->where('email',$teacher)
 	        ->distinct()
 	        ->OrderBy('asignatura','seccion')->get();
 	        //dd($correoAlumnos);
 
-
-	        Mail::to($teacher->email)
-	        ->cc($correoAlumnos)
-	        ->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
-	        ->send(new NotificacionEmail($cursos));
+	        // Mail::to($teacher->email)
+	        // ->cc($correoAlumnos)
+	        // ->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
+	        // ->send(new NotificacionEmail($cursos));
 	       
 	}
 
