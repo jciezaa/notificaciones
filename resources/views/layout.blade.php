@@ -45,11 +45,6 @@
                 </div>
             @endif
 
-
-
-
-
-
     <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 
       <div class="container">

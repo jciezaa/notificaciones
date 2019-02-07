@@ -92,17 +92,8 @@
                             </tbody>
                             </table>
                             
-                        </fieldset>
-                    
-
-
+                        </fieldset>                    
 </div>
-
-
-
-
-                
-
 
                 <div class="col-md-6">
 

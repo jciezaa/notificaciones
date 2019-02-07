@@ -11,8 +11,8 @@
 
 El siguiente proyecto se basa en brindar soporte al área de registros académicos por el equipo de programación:
 
-- [Envío masivo de Emails con un aplantilla predefinida para la notificaciones de cruces].
-- [Generación y comprobación de horarios para evaluaciones escritas].
+- Envío masivo de Emails con un aplantilla predefinida para la notificaciones de cruces.
+- Generación y comprobación de horarios para evaluaciones escritas.
 
 Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.
 

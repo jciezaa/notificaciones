@@ -17,10 +17,18 @@ Route::get('/', function () {
     return view('emails.welcome');
 });
 
+
+
 //Para utilizarlo con etiquetas <a href="">
 //Route::get('/notificacion','TeacherController@mail');
 
 //Para utilizarlo con button
-Route::get('/configuraciones','ConfigurationController@edit');
+
 
 Route::get('/notificacion','TeacherController@mail');
+
+
+Route::get('reporte','ConfigurationController@edit');
+Route::get('configuraciones/remitente','ConfigurationController@confSender');
+Route::get('configuraciones/email','ConfigurationController@confEmail');
+Route::get('configuraciones/copiaoculta','ConfigurationController@confBbc');

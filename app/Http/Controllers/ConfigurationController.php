@@ -22,5 +22,38 @@ class ConfigurationController extends Controller
 
 }
 
+	public function confSender(){
+
+		$confsender = Configuration::where('campo','REMITENTE')->first();
+
+		return view('emails.config.remitente')->with(compact('confsender'));
+	}
+
+
+	public function confBbc(){
+
+		$confbbc = Configuration::where('campo','BBC')->get();
+
+		return view('emails.config.copiaoculta')->with(compact('confbbc'));
+	}
+
+
+	public function confEmail(){
+
+		$confemail = Email::get()->first();
+
+		return view('emails.config.email')->with(compact('confemail'));
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 }
