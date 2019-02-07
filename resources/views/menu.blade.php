@@ -20,7 +20,7 @@
   </li> --}}
 
   <li class="nav-item">
-    <a @if(request()->is('notificar')) class="nav-link active" @endif class="nav-link" href="/notificar">Notificar</a>
+    <a @if(request()->is('notificar')) class="nav-link active" @endif class="nav-link" href="/notificacion">Notificar</a>
   </li>
 
   <li class="nav-item">

@@ -22,9 +22,10 @@ class Notificacion extends Mailable
 
     public $cursos;
 
-    public function __construct($cursos)
+    public function __construct($cursos,$confemail)
     {
         $this->cursos = $cursos;
+        $this->confemail = $confemail;
 
 
     }
@@ -37,7 +38,7 @@ class Notificacion extends Mailable
     public function build()
     {
         // dd($this->correoAlumnos);
-            return $this->view('emails.notificacion',[$this->cursos])            
+            return $this->view('emails.notificacion',[$this->cursos,$this->confemail])            
             ->from('aliver.meza@upc.pe','Aliver Meza Rodriguez')
             ->subject('Lista de alumnos con cruce - Exámenes finales 2019-00 EPE');
             //->subject('Prueba 4 - copia oculta');

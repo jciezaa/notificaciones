@@ -10,6 +10,7 @@ use Illuminate\Mail\Message;
 use App\Mail\Notificacion as NotificacionEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Teacher;
+use App\Configuration;
 
 class TeacherController extends Controller
 {
@@ -24,6 +25,12 @@ class TeacherController extends Controller
     	//Sólo lista los emails de docentes dentro de la base de datos
         $teachers = DB::table('teachers')->GroupBy('email')->pluck('email as email');
 
+        //Cargar los correos de copia oculta
+        $confbbc = Configuration::select('valorOne')->where('campo','BBC')->get();
+
+        $confemail = Email::get()->first();
+
+        //dd($confbbc);
         //dd($teachers);
 
         foreach ($teachers as $teacher) {
@@ -41,10 +48,13 @@ class TeacherController extends Controller
 	        ->OrderBy('asignatura','seccion')->get();
 	        //dd($correoAlumnos);
 
+
+
 	        // Mail::to($teacher->email)
 	        // ->cc($correoAlumnos)
 	        // ->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
-	        // ->send(new NotificacionEmail($cursos));
+	        // ->bcc($confbbc)
+	        // ->send(new NotificacionEmail($cursos,$confemail));
 	       
 	}
 
