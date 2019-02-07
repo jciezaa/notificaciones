@@ -28,7 +28,9 @@ Route::get('/', function () {
 Route::get('/notificacion','TeacherController@mail');
 
 
-Route::get('reporte','ConfigurationController@edit');
+Route::get('reporte','ConfigurationController@indexConfig');
 Route::get('configuraciones/remitente','ConfigurationController@confSender');
+Route::post('configuraciones/remitente','ConfigurationController@updateSender');
+
 Route::get('configuraciones/email','ConfigurationController@confEmail');
 Route::get('configuraciones/copiaoculta','ConfigurationController@confBbc');

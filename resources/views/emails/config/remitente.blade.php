@@ -25,26 +25,32 @@
             <div class="row">
 
                 <div class="col-md-9">
-
-                    <form action="" method="POST">  
+                    
+                     
                     {{csrf_field()}}  
                         <fieldset>
                             <h3>Remitente</h3>
+                            <form role="form" action="" method="POST"> 
                             <div class="form-group">
-                              <label for="remitente">Email</label>
-                              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" value="{{old('email', $confsender->valorTwo)}}">
+                              <label for="email">Email</label>
+                              <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="{{old('email', $confsender->valorTwo)}}">
+                              </div>
 
-                              <label for="fullname">Nombre completo</label>
-                                <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Nombre completo" value="{{ $confsender->valorOne }}">
-
+                            <div class="form-group">
+                              <label for="name">Nombre completo</label>
+                                <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Nombre completo" value="{{ old('name', $confsender->valorOne) }}">
+    
                               <small id="emailHelp" class="form-text text-muted">Los datos que se encuentren registrados servirán para la configuración del servidor de correo.</small>
                             </div>
-                        </fieldset>
-                    </form>
+                            <div class="form-group">
+                              <button type="button" class="btn btn-primary">Guardar Cambios</button>
+                            </div>      
+                            </form>                      
+                         </fieldset>
 
-                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
 
-
+                    
+               
                 </div>
 
             </div>

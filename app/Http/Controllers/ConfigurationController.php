@@ -12,7 +12,7 @@ class ConfigurationController extends Controller
 {
     
 
-	public function edit(){
+	public function indexConfig(){
 
 		$confsender = Configuration::where('campo','REMITENTE')->first();
 		$confbbc = Configuration::where('campo','BBC')->get();
@@ -24,8 +24,7 @@ class ConfigurationController extends Controller
 
 	public function confSender(){
 
-		$confsender = Configuration::where('campo','REMITENTE')->first();
-
+		$confsender = Configuration::where('campo','REMITENTE')->first();		
 		return view('emails.config.remitente')->with(compact('confsender'));
 	}
 
@@ -46,10 +45,33 @@ class ConfigurationController extends Controller
 	}
 
 
+//	UPDATE REMITENTE
+
+		public function updateSender( Request $request){
+
+			$this->validate($request, [
+		            'name' => 'max:255|min:5',
+		            'email'=> 'max:255|min:5|email',
+		    ], [
+		            'name.max' => 'Por favor ingrese sólo nombre completo.',
+		            'name.min' => 'Por favor ingrese un nombre completo válido.',
+		            'email.max' => 'Por favor ingrese un email completo válido.',
+		            'email.min' => 'Por favor ingrese un email completo válido.',
+		            'email' => 'Ingrese un email valido'
+
+		    ]);
 
 
+	        $sender = Configuration::find(1);
+			$sender->valorOne = $request->input('name');
+			$sender->valorTwo = $request->input('email');
+			$sender->save();
 
+        return redirect(url('/configuraciones/remitente'))->with('emails.config.remitente','Remitente modificado exitosamente');
 
+ // END UPDATE REMITENTE
+
+}
 
 
 
