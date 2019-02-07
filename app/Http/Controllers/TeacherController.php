@@ -11,6 +11,7 @@ use App\Mail\Notificacion as NotificacionEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Teacher;
 use App\Configuration;
+use App\Email;
 
 class TeacherController extends Controller
 {
@@ -23,38 +24,37 @@ class TeacherController extends Controller
 
     	set_time_limit(0);
     	//Sólo lista los emails de docentes dentro de la base de datos
-        $teachers = DB::table('teachers')->GroupBy('email')->pluck('email as email');
-
+        //$teachers = DB::table('teachers')->GroupBy('email')->pluck('email');
+        $teachers = Teacher::select('email as email')->distinct()->get();
         //Cargar los correos de copia oculta
-        $confbbc = Configuration::select('valorOne')->where('campo','BBC')->get();
+        $confbbc = Configuration::select('valorOne as email')->where('campo','BBC')->get()->first();
 
         $confemail = Email::get()->first();
 
-        //dd($confbbc);
+        //dd($teachers);
         //dd($teachers);
 
         foreach ($teachers as $teacher) {
-
+        	//dd($teacher);
 			$cursos = DB::table('teachers')
-	        ->where('email',$teacher)
+	        ->where('email',$teacher->email)
 	        ->distinct()
 	        ->OrderBy('asignatura','seccion')->get();
-    
-	        	 
-	        $correoAlumnos = DB::table('teachers')
-	        ->select('correoAlumno as email')
-	        ->where('email',$teacher)
-	        ->distinct()
-	        ->OrderBy('asignatura','seccion')->get();
-	        //dd($correoAlumnos);
+    		
+	        $correoAlumnos = Teacher::select('correoAlumno as email')->where('email',$teacher->email)->get()->first();
 
+	        // $correoAlumnos = DB::table('teachers')
+	        // ->select('correoAlumno as email')
+	        // ->where('email',$teacher)
+	        // ->distinct()
+	        // ->OrderBy('asignatura','seccion')->get();
+	        // //dd($correoAlumnos);
 
-
-	        // Mail::to($teacher->email)
-	        // ->cc($correoAlumnos)
-	        // ->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
-	        // ->bcc($confbbc)
-	        // ->send(new NotificacionEmail($cursos,$confemail));
+	        Mail::to($teacher->email)
+	        ->cc([$correoAlumnos->email])
+	        //->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
+	        ->bcc([$confbbc->email])
+	        ->send(new NotificacionEmail($cursos,$confemail));
 	       
 	}
 

@@ -37,10 +37,22 @@ class Notificacion extends Mailable
      */
     public function build()
     {
-        // dd($this->correoAlumnos);
-            return $this->view('emails.notificacion',[$this->cursos,$this->confemail])            
-            ->from('aliver.meza@upc.pe','Aliver Meza Rodriguez')
-            ->subject('Lista de alumnos con cruce - Exámenes finales 2019-00 EPE');
-            //->subject('Prueba 4 - copia oculta');
+
+        //Obtener Remitente
+            $confsender = DB::table('configurations')
+            ->select('valorOne as name','valorTwo as email')
+            ->where('campo','REMITENTE')->get()->first();
+
+            return $this->view('emails.notificacion',compact('cursos','confemail'))            
+            ->from($confsender->email,$confsender->name)
+            ->subject($this->confemail->asunto);
+
+
+        //     //Manera manual y directa
+        // // dd($this->correoAlumnos);
+        //     return $this->view('emails.notificacion',[$this->cursos,$this->confemail])            
+        //     ->from('aliver.meza@upc.pe','Aliver Meza Rodriguez')
+        //     ->subject('Lista de alumnos con cruce - Exámenes finales 2019-00 EPE');
+        //     //->subject('Prueba 4 - copia oculta');
     }
 }
