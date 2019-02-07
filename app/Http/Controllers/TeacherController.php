@@ -23,38 +23,27 @@ class TeacherController extends Controller
 	public function mail(){	
 
     	set_time_limit(0);
+
     	//Sólo lista los emails de docentes dentro de la base de datos
-        //$teachers = DB::table('teachers')->GroupBy('email')->pluck('email');
         $teachers = Teacher::select('email as email')->distinct()->get();
         //Cargar los correos de copia oculta
         $confbbc = Configuration::select('valorOne as email')->where('campo','BBC')->get()->first();
 
-        $confemail = Email::get()->first();
-
-        //dd($teachers);
-        //dd($teachers);
-
         foreach ($teachers as $teacher) {
-        	//dd($teacher);
+        	//Recorremos docente por docente para enviar email con sus cursos-secciones-alumnos
 			$cursos = DB::table('teachers')
 	        ->where('email',$teacher->email)
 	        ->distinct()
 	        ->OrderBy('asignatura','seccion')->get();
-    		
-	        $correoAlumnos = Teacher::select('correoAlumno as email')->where('email',$teacher->email)->get()->first();
 
-	        // $correoAlumnos = DB::table('teachers')
-	        // ->select('correoAlumno as email')
-	        // ->where('email',$teacher)
-	        // ->distinct()
-	        // ->OrderBy('asignatura','seccion')->get();
-	        // //dd($correoAlumnos);
+    		//Listamos los correos de los alumnos de cada docente para enviarlos como CC
+	        $correoAlumnos = Teacher::select('correoAlumno as email')->where('email',$teacher->email)->get()->first();
 
 	        Mail::to($teacher->email)
 	        ->cc([$correoAlumnos->email])
 	        //->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
 	        ->bcc([$confbbc->email])
-	        ->send(new NotificacionEmail($cursos,$confemail));
+	        ->send(new NotificacionEmail($cursos));
 	       
 	}
 

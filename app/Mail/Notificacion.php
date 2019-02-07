@@ -8,44 +8,33 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\DB;
 use App\MailClass;
-
+use App\Email;
 
 class Notificacion extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-
     public $cursos;
 
-    public function __construct($cursos,$confemail)
+    public function __construct($cursos)
     {
         $this->cursos = $cursos;
-        $this->confemail = $confemail;
-
 
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-
+        //Obtener configuracion del correo
+        $confemail = Email::get()->first();
         //Obtener Remitente
-            $confsender = DB::table('configurations')
-            ->select('valorOne as name','valorTwo as email')
-            ->where('campo','REMITENTE')->get()->first();
+        $confsender = DB::table('configurations')
+        ->select('valorOne as name','valorTwo as email')
+        ->where('campo','REMITENTE')->get()->first();
 
-            return $this->view('emails.notificacion',compact('cursos','confemail'))            
-            ->from($confsender->email,$confsender->name)
-            ->subject($this->confemail->asunto);
+        //Retornar vista del mensaje con sus variables
+        return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
+        ->from($confsender->email,$confsender->name)
+        ->subject($confemail->asunto);
 
 
         //     //Manera manual y directa
