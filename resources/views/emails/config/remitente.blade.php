@@ -5,9 +5,9 @@
 
     <!-- Formulario principal para editar proyectos -->
 
-                @if(session('configuration'))
+                @if(session('notification'))
                     <div class="alert alert-success">
-                        {{ session('configuration')}}
+                        {{ session('notification')}}
                     </div>
                 @endif
 

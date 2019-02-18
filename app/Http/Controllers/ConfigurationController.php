@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class ConfigurationController extends Controller
 {
     
-
 	public function indexConfig(){
 
 		$confsender = Configuration::where('campo','REMITENTE')->first();
@@ -20,14 +19,13 @@ class ConfigurationController extends Controller
 
 		return view('emails.configuraciones')->with(compact('confsender','confbbc','confemail'));
 
-}
+	}
 
 	public function confSender(){
 
 		$confsender = Configuration::where('campo','REMITENTE')->first();		
 		return view('emails.config.remitente')->with(compact('confsender'));
 	}
-
 
 	public function confBbc(){
 
@@ -37,12 +35,7 @@ class ConfigurationController extends Controller
 	}
 
 
-	public function confEmail(){
 
-		$confemail = Email::get()->first();
-
-		return view('emails.config.email')->with(compact('confemail'));
-	}
 
 
 //	UPDATE REMITENTE
@@ -61,21 +54,49 @@ class ConfigurationController extends Controller
 
 		    ]);
 
-
 	        $sender = Configuration::find(1);
 			$sender->valorOne = $request->input('name');
 			$sender->valorTwo = $request->input('email');
 			$sender->save();
 
-        return redirect(url('/configuraciones/remitente'))->with('emails.config.remitente','Remitente modificado exitosamente');
+        return redirect(url('/configuraciones'))->with('notification','Remitente modificado exitosamente');
 
  // END UPDATE REMITENTE
 
 }
 
 
+//REGISTRO DE DESTINATARIOS EN COPIA OCULTA
+	public function createBBC(Request $request){
+
+		$this->validate($request, [
+
+		            'emailBBC'=> 'max:255|min:8|email',
+		    ], [
+		            'emailBBC.max' => 'Por favor ingrese un email completo.',
+		            'emailBBC.min' => 'Por favor ingrese un email completo.',
+		            'emailBBC' => 'Ingrese un email valido'
+
+		    ]);
+
+	        $createBBC = new Configuration();
+			$createBBC->campo = 'BBC';
+			$createBBC->valorOne = $request->input('emailBBC');
+			$createBBC->save();
+
+        return back()->with('notification','Email agregado para copia oculta');
+
+// TERMINO DE REGISTRO DE DESTINATARIOS EN COPIA OCULTA
 
 
+	}
+
+	public function deleteBBC($id){
+
+		Configuration::find($id)->delete();
+		return back();
+
+	}
 
 
 }

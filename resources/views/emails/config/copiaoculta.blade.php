@@ -25,24 +25,26 @@
             <div class="row">
 
                 <div class="col-md-9">
-
-                    <form action="" method="POST">  
+                    <fieldset>
+                    <form action="/configuraciones/copiaoculta" method="POST">  
                     {{csrf_field()}}  
-                        <fieldset>
+                        
                             <h3>Copia Oculta</h3>
-                                <form>
-                            
-                                 <input type="hidden" name="" value="">
-                                     <div class="form-group">
-                                         <input type="email" name="emailBBC" placeholder="Ingrese correo electrónico" class="form-control">
-                                     </div>
-                                <button type="button" class="btn btn-primary btn-sm">Añadir</button>
+
+                            <div class="form-group">
+                                <input type="email" name="emailBBC" placeholder="Ingrese correo electrónico" class="form-control" style="text-transform:uppercase;"">
+                            </div>
                                 
-                                </form>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-sm">Añadir</button>
+                            </div>
 
-                                <small id="emailHelp" class="form-text text-muted">Los datos que se encuentren registrados servirán para la configuración del servidor de correo.</small>
+                                
+                    </form>
+                    </fieldset>
+                    <small id="emailHelp" class="form-text text-muted">Los datos que se encuentren registrados servirán para la configuración del servidor de correo.</small>
 
-
+                        <fieldset>
                             <table class="table table-hover">
                             <thead>
                                 <th scope="col">#</th>
@@ -57,12 +59,9 @@
                                         <th scope="row">{{ $key+1 }}</th>
                                         <td>{{ $confbbc->valorOne }}</td>
                                         <td>
-                                            <button type="button" data-level="" class="btn btn-warning btn-sm" title="Editar" >
-                                                <span class="glyphicon glyphicon-pencil"></span>
-                                            </button>
 
-                                            <a href="" class="btn btn-danger btn-sm" title="Eliminar">
-                                                <span class="fa fa-pencil"></span>
+                                            <a href="/configuraciones/copiaoculta/{{ $confbbc->id}}/eliminar" class="btn btn-danger btn-sm" title="Eliminar">
+                                                <span class="fa fa-pencil">Eliminar</span>
                                             </a>
                                         </td>
                                     </tr>
@@ -72,8 +71,6 @@
                             </table>
                             
                         </fieldset>   
-                    </form>
-                    <button type="button" class="btn btn-primary">Guardar Cambios</button>
 
                 </div>
 

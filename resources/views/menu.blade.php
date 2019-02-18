@@ -35,7 +35,7 @@
   </li> --}}
 
   <li class="nav-item">
-    <a @if(request()->is('notificar')) class="nav-link active" @endif class="nav-link" href="/notificacion">Notificar</a>
+    <a @if(request()->is('welcome')) class="nav-link active" @endif class="nav-link" href="/welcome">Notificar</a>
   </li>
 
   <li class="nav-item">

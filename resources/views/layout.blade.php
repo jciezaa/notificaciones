@@ -27,23 +27,7 @@
   </head>
 
   <body>
-<!-- Imprimir alertas -->
-            @if(session('notification'))
-                <div class="alert alert-success">
-                    {{ session('notification')}}
-                </div>
-            @endif
 
-<!-- Imprimir errores -->
-            @if(count($errors)>0)
-                <div    class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
 
     <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 
