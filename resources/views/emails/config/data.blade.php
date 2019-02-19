@@ -28,21 +28,24 @@
                       
                         <fieldset>
                             <h3>Adjuntar base de datos</h3>
-
+                        <form action="/importarDatabase" method="POST" enctype="multipart/form-data">
+                            {{csrf_field()}}
                            <div class="form-group">
                             <div class="input-group mb-3">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="file-1" onchange="atento()">
+                                <input type="file" class="custom-file-input" id="file-1" onchange="atento()" name="excel">
                                 <label id="real-input"class="custom-file-label" for="file-1" >Seleccionar archivo</label>
                               </div>
                               <div class="input-group-append">
-                                <span type="button" class="input-group-text" id="">Upload</span>
+                                <button class="input-group-text">Upload</button>
                               </div>
                             </div>
                           </div>
+                        </form>
                         <small id="emailHelp" class="form-text text-muted">Al adjuntar una base de datos se eliminará la anterior, por favor tomar en cuenta para prevenir desastres.</small><br>
 
                         </fieldset>
+
 
                         <br>
                         <br>
@@ -65,65 +68,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($teachers as $key => $teacher)
                                 <tr class="table-default table-sm">
-                                    <th scope="row">1</th>
-                                        <td>Alvaro Toledo</td>
-                                        <td>pcalvaro@upc.edu.pe</td>
-                                        <td>AR166</td>
-                                        <td>ARQUITECTURA MODERNA</td>
-                                        <td>A6BD</td>
-                                        <td>SUS</td>
-                                        <td>201623364</td>
-                                        <td>U201623364@upc.edu..pe</td>
-                                        <td>Jesús Antonio, Cieza Arteaga</td>                                  
+                                    <th scope="row">{{ $key+1 }}</th>
+                                        <td>{{ $teacher->docente }}</td>
+                                        <td>{{ $teacher->email }}</td>
+                                        <td>{{ $teacher->asignatura }}</td>
+                                        <td>{{ $teacher->descripcion }}</td>
+                                        <td>{{ $teacher->seccion }}</td>
+                                        <td>{{ $teacher->medio }}</td>
+                                        <td>{{ $teacher->alumno }}</td>
+                                        <td>{{ $teacher->correoalumno }}</td>
+                                        <td>{{ $teacher->apellidos }}</td>                                  
                                 </tr>
-
-
-                                <tr class="table-default table-sm">
-                                    <th scope="row">1</th>
-                                        <td>Alvaro Toledo</td>
-                                        <td>pcalvaro@upc.edu.pe</td>
-                                        <td>AR166</td>
-                                        <td>ARQUITECTURA MODERNA</td>
-                                        <td>A6BD</td>
-                                        <td>SUS</td>
-                                        <td>201623364</td>
-                                        <td>U201623364@upc.edu..pe</td>
-                                        <td>Jesús Antonio, Cieza Arteaga</td>                                  
-                                </tr>
-
-
-                                <tr class="table-default table-sm">
-                                    <th scope="row">1</th>
-                                        <td>Alvaro Toledo</td>
-                                        <td>pcalvaro@upc.edu.pe</td>
-                                        <td>AR166</td>
-                                        <td>ARQUITECTURA MODERNA</td>
-                                        <td>A6BD</td>
-                                        <td>SUS</td>
-                                        <td>201623364</td>
-                                        <td>U201623364@upc.edu..pe</td>
-                                        <td>Jesús Antonio, Cieza Arteaga</td>                                  
-                                </tr>
-
-
-                                <tr class="table-default table-sm">
-                                    <th scope="row">1</th>
-                                        <td>Alvaro Toledo</td>
-                                        <td>pcalvaro@upc.edu.pe</td>
-                                        <td>AR166</td>
-                                        <td>ARQUITECTURA MODERNA</td>
-                                        <td>A6BD</td>
-                                        <td>SUS</td>
-                                        <td>201623364</td>
-                                        <td>U201623364@upc.edu..pe</td>
-                                        <td>Jesús Antonio, Cieza Arteaga</td>                                  
-                                </tr>
-
-
-
-
-
+                                @endforeach
 
 
                             </tbody>

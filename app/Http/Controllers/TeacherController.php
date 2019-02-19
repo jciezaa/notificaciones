@@ -12,37 +12,51 @@ use Illuminate\Support\Facades\Mail;
 use App\Teacher;
 use App\Configuration;
 use App\Email;
+use Maatwebsite\Excel\Facades\Excel;
+
+
+
 
 class TeacherController extends Controller
 {
     
     public function index(){
+    	$teachers = Teacher::all()->random(5);
 
+    	return view('emails.config.data')->with(compact('teachers'));
     }
 
-    public function import()
-    {
-    	Excel::load('teachers.csv', function($reader) {
+    public function importarDatabase(Request $request){
+    	Teacher::truncate();
+    	
+
+    	if($request->hasFile('excel')){
+
+            \Excel::load($request->file('excel')->getRealPath(), function ($reader)
+            {
+
+                foreach ($reader->toArray() as $row)
+                {
+                	$teacher = new Teacher;
+
+                    $teacher->docente       = $row['docente'];
+                    $teacher->email 		= $row['email'];
+                    $teacher->asignatura    = $row['asignatura'];
+                    $teacher->descripcion 	= $row['descripcion'];
+                    $teacher->seccion       = $row['seccion'];
+                    $teacher->medio 		= $row['medio'];
+                    $teacher->alumno       	= $row['alumno'];
+                    $teacher->correoalumno 	= $row['correoalumno'];
+                    $teacher->apellidos		= $row['apellidos'];
+                    $teacher->save();
  
-     foreach ($reader->get() as $teacher) {
-     	
-     Teacher::create([
-     'docente' => $teacher->docente,
-     'email' =>$teacher->email,
-     'asignatura' =>$teacher->asignatura,
-     'descripcion' =>$teacher->descripcion,
-     'seccion' =>$teacher->seccion,
-     'medio' =>$teacher->medio,
-     'alumno' =>$teacher->alumno,
-     'correoAlumno' =>$teacher->correoAlumno,
-     'apellidos' => $teacher->apellidos
-     ]);
-       }
- });
- 		return Teacher::all();
+
+                }
+            });
+        }
+
+        return back()->with('notification','Archivo cargado a la base de datos');
     }
-
-
 
 
 	public function mail(){	

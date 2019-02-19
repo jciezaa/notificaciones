@@ -34,7 +34,7 @@
 				  <div class="card-header">TIEMPO ESTIMADO</div>
 				  <div class="card-body">
 				    <h2 class="card-title">{{ $tiempo }}</h2>
-				    <p class="card-text">Minutos es el tiempo estimado para la notificación de 500 docentes y 1500 alumnos.</p>
+				    <p class="card-text">Minutos es el tiempo estimado para la notificación de {{ $teachers}} docentes y {{ $correoAlumnos }} alumnos.</p>
 				  </div>
 				</div>
 		</div>

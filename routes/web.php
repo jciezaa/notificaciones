@@ -38,8 +38,11 @@ Route::post('notificacion','TeacherController@mail');
 Route::get('configuraciones','ConfigurationController@indexConfig');
 Route::get('reporte','ConfigurationController@indexConfig');
 
+//Ruta para importar CVS
+Route::post('importarDatabase', 'TeacherController@importarDatabase');
 
-Route::get('configuraciones/data','ConfigurationController@confDataBase');
+
+Route::get('configuraciones/data','TeacherController@index');
 
 
 Route::get('configuraciones/email','EmailController@confEmail');
