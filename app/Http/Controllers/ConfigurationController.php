@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Configuration;
 use App\Email;
+use App\Teacher;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ConfigurationController extends Controller
@@ -21,10 +22,10 @@ class ConfigurationController extends Controller
 
 	}
 
-	public function confSender(){
+	public function confDataBase(){
 
-		$confsender = Configuration::where('campo','REMITENTE')->first();		
-		return view('emails.config.remitente')->with(compact('confsender'));
+				
+		return view('emails.config.data');
 	}
 
 	public function confBbc(){
@@ -36,6 +37,16 @@ class ConfigurationController extends Controller
 
 
 
+
+	public function resumen(){
+
+		$teachers = Teacher::select('email as email')->distinct()->get()->count();
+		$correoAlumnos = Teacher::select('correoAlumno as email')->distinct()->get()->count();
+		$tiempo = $teachers/5;
+
+		return view('resumen')->with(compact('teachers','correoAlumnos','tiempo'));
+
+		}
 
 
 //	UPDATE REMITENTE

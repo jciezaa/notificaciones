@@ -41,6 +41,8 @@
   box-sizing: border-box;
 }
 
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -3671,6 +3673,8 @@ input[type="button"].btn-block {
 .custom-file-input:focus ~ .custom-file-label {
   border-color: #80bdff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  /*Aqui Jesús Cieza*/
+
 }
 
 .custom-file-input:focus ~ .custom-file-label::after {

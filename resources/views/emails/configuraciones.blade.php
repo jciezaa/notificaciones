@@ -26,7 +26,7 @@
 
             <div class="row">
 
-                <div class="col-md-6">
+                <div class="col">
 
 
                     <form action="" method="POST">  
@@ -95,7 +95,7 @@
                         </fieldset>                    
 </div>
 
-                <div class="col-md-6">
+                <div class="col">
 
 
                 <form>    
@@ -130,18 +130,7 @@
 
                 </div>
 
-
-
-
-
-
-
-
             </div>
-
-
-
-
 
 
     @endsection

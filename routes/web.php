@@ -12,11 +12,12 @@
 */
 
 
+// Route::get('/', function () {
+//     return view('resumen');
+// });
 
-Route::get('/', function () {
-    return view('emails.welcome');
-});
-
+Route::get('/', 'ConfigurationController@resumen');
+Route::get('resumen', 'ConfigurationController@resumen');
 
 
 
@@ -27,8 +28,8 @@ Route::get('/', function () {
 //Para utilizarlo con button
 
 
-Route::get('/welcome', function(){
-	return view('emails.welcome');
+Route::get('notificar', function(){
+	return view('notificar');
 });
 
 Route::post('notificacion','TeacherController@mail');
@@ -38,8 +39,7 @@ Route::get('configuraciones','ConfigurationController@indexConfig');
 Route::get('reporte','ConfigurationController@indexConfig');
 
 
-Route::get('configuraciones/remitente','ConfigurationController@confSender');
-Route::post('configuraciones/remitente','ConfigurationController@updateSender');
+Route::get('configuraciones/data','ConfigurationController@confDataBase');
 
 
 Route::get('configuraciones/email','EmailController@confEmail');

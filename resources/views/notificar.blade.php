@@ -20,35 +20,6 @@
               </p>
             </div>
 
- 
- <!-- Modal -->
-{{-- <div class="modal fade" id="modalNotificar" tabindex="-1" role="dialog" aria-labelledby="examplemodalNotificar" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="examplemodalNotificar">Confirmación de notificaciones</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      
-      <div class="modal-body">
-        ¿Desea iniciar el emailing?
-      </div>
-      <div class="modal-footer">
-
-        <form action="/notificacion" method="POST">
-          {{csrf_field()}}
-          <button class="btn btn-success"  onclick="update()">Aceptar</button>
-          <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</div> --}}
-
 
 <div class="modal" id="modalNotificar">
   <div class="modal-dialog" role="document">
@@ -75,11 +46,6 @@
   </div>
 </div>
 
-
-
-
-
-
 </div>
 
 
@@ -100,6 +66,7 @@
           }
 
       }
+      
       function cierraPopup() {
           $("#modalNotificar").modal('hide');//ocultamos el modal
           $('body').removeClass('modal-open');//eliminamos la clase del body para poder hacer scroll

@@ -20,6 +20,31 @@ class TeacherController extends Controller
 
     }
 
+    public function import()
+    {
+    	Excel::load('teachers.csv', function($reader) {
+ 
+     foreach ($reader->get() as $teacher) {
+     	
+     Teacher::create([
+     'docente' => $teacher->docente,
+     'email' =>$teacher->email,
+     'asignatura' =>$teacher->asignatura,
+     'descripcion' =>$teacher->descripcion,
+     'seccion' =>$teacher->seccion,
+     'medio' =>$teacher->medio,
+     'alumno' =>$teacher->alumno,
+     'correoAlumno' =>$teacher->correoAlumno,
+     'apellidos' => $teacher->apellidos
+     ]);
+       }
+ });
+ 		return Teacher::all();
+    }
+
+
+
+
 	public function mail(){	
 
     	set_time_limit(0);
