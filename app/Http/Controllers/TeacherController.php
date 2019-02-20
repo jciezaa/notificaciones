@@ -83,8 +83,10 @@ class TeacherController extends Controller
 
     	//Sólo lista los emails de docentes dentro de la base de datos
         $teachers = Teacher::select('email as email')->distinct()->get();
+
         //Cargar los correos de copia oculta
-        $confbbc = Configuration::select('valorOne as email')->where('campo','BBC')->get()->first();
+        $confbbc = Configuration::select('valorOne as email')->where('campo','BBC')->get()->toArray();
+        //dd($confbbc);
 
         foreach ($teachers as $teacher) {
         	//Recorremos docente por docente para enviar email con sus cursos-secciones-alumnos
@@ -94,12 +96,11 @@ class TeacherController extends Controller
 	        ->OrderBy('asignatura','seccion')->get();
 
     		//Listamos los correos de los alumnos de cada docente para enviarlos como CC
-	        $correoAlumnos = Teacher::select('correoAlumno as email')->where('email',$teacher->email)->get()->first();
+	        $correoAlumnos = Teacher::select('correoAlumno as email')->where('email',$teacher->email)->get()->toArray();
 
 	        Mail::to($teacher->email)
-	        ->cc([$correoAlumnos->email])
-	        //->bcc(['julio.palomino@upc.pe','katherine.quispe@upc.pe','zuleyma.flores@upc.pe'])
-	        ->bcc([$confbbc->email])
+	        ->cc($correoAlumnos)
+	        ->bcc($confbbc)
 	        ->send(new NotificacionEmail($cursos));
 	       
 	}
