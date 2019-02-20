@@ -42,13 +42,13 @@
           <ul class="navbar-nav">
 
             <li class="nav-item">
-              <a class="nav-link" href="">Notificaciones</a>
+              <a class="nav-link" href="/resumen">Notificaciones</a>
             </li>
 
 
 
             <li class="nav-item">
-              <a class="nav-link" href="">Incidencias</a>
+              <a class="nav-link" href="/incidencias">Incidencias</a>
             </li>
 
             <li class="nav-item">
@@ -59,7 +59,7 @@
           <ul class="nav navbar-nav ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="" target="_blank">Créditos</a>
+              <a class="nav-link" href="https://twitter.com/jciezaa" target="_blank">Créditos</a>
             </li>
 
           </ul>
@@ -100,7 +100,18 @@
 
 
 
+      <footer id="footer">
+        <div class="row">
+          <div class="col-lg-12">
 
+            <p class="float-lg-right">Desarrollado por <a href="https://twitter.com/jciezaa" target="_blank">Jesús Cieza Arteaga</a>.</p>
+{{--             <p>Diseño por <a href="https://bootswatch.com/lux/" target="_blank">Bootswatch Lux</a>.</p>
+            <p>Basado en <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Iconos de <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p> --}}
+
+          </div>
+        </div>
+
+      </footer>
 
 
 </div>

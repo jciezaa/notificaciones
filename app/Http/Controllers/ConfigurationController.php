@@ -36,8 +36,6 @@ class ConfigurationController extends Controller
 	}
 
 
-
-
 	public function resumen(){
 
 		$teachers = Teacher::select('email as email')->distinct()->get()->count();
@@ -51,7 +49,7 @@ class ConfigurationController extends Controller
 
 //	UPDATE REMITENTE
 
-		public function updateSender( Request $request){
+	public function updateSender( Request $request){
 
 			$this->validate($request, [
 		            'name' => 'max:255|min:5',
@@ -74,31 +72,30 @@ class ConfigurationController extends Controller
 
  // END UPDATE REMITENTE
 
-}
-
+	}
 
 //REGISTRO DE DESTINATARIOS EN COPIA OCULTA
 	public function createBBC(Request $request){
 
 		$this->validate($request, [
 
-		            'emailBBC'=> 'max:255|min:8|email',
+		            'emailBBC'=> 'required|max:255|min:8|email',
 		    ], [
 		            'emailBBC.max' => 'Por favor ingrese un email completo.',
 		            'emailBBC.min' => 'Por favor ingrese un email completo.',
-		            'emailBBC' => 'Ingrese un email valido'
+		            'emailBBC.email' => 'Ingrese un email valido',
+		            'emailBBC.required' => 'Es necesario proporcionar un email'
 
 		    ]);
 
 	        $createBBC = new Configuration();
 			$createBBC->campo = 'BBC';
-			$createBBC->valorOne = $request->input('emailBBC');
+			$createBBC->valorOne = strtoupper($request->input('emailBBC'));
 			$createBBC->save();
 
         return back()->with('notification','Email agregado para copia oculta');
 
 // TERMINO DE REGISTRO DE DESTINATARIOS EN COPIA OCULTA
-
 
 	}
 

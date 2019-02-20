@@ -2,6 +2,10 @@
     @extends('layout')
 
     @section('content')
+
+        <!-- Incluir alertas -->
+        @include('errors.alertas')
+      <!-- Incluir alertas -->
 	
 	<div class="row">
 		

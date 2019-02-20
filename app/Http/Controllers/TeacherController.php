@@ -21,19 +21,35 @@ class TeacherController extends Controller
 {
     
     public function index(){
-    	$teachers = Teacher::all()->random(5);
+    	$teachers = Teacher::all();
+        //dd($teachers);
+        if($teachers->count() > 0){
 
-    	return view('emails.config.data')->with(compact('teachers'));
+            $teachers = $teachers->random(5);          
+    	       return view('emails.config.data')->with(compact('teachers'));
+        }
+
+        return view('emails.config.data')->with(compact('teachers'));
+    
     }
 
     public function importarDatabase(Request $request){
-    	Teacher::truncate();
-    	
 
-    	if($request->hasFile('excel')){
+        $this->validate($request, [
+                    'excel' => 'required|mimes:xls,xlsx',
+                   
+            ], [
+                    'excel.required' => 'Por favor adjunta un archivo de Excel.',
+                    'excel.mimes' => 'Sólo puedes adjuntar archivos de Excel.',
+            ]);
+ 	    	
+
+    	if($request->hasFile('excel')){            
 
             \Excel::load($request->file('excel')->getRealPath(), function ($reader)
             {
+
+                Teacher::truncate();
 
                 foreach ($reader->toArray() as $row)
                 {
@@ -53,9 +69,11 @@ class TeacherController extends Controller
 
                 }
             });
+
+            return redirect('configuraciones/data')->with('notification','La base de datos se adjuntó correctamente');
         }
 
-        return back()->with('notification','Archivo cargado a la base de datos');
+        return redirect('configuraciones/data')->with('alerta','Por favor selecciona un archivo válido');
     }
 
 
