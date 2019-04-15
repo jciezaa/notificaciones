@@ -18,9 +18,9 @@ Predator es un sistema desarrollado con el framework Laravel y base de datos MyS
 
 ## Instalación para funcionamiento
 
-# Preparar entorno local
+### Preparar entorno local
 
-# Instalación de Laragon
+#### Instalación de Laragon
 Descargar e instalar Laragon: https://sourceforge.net/projects/laragon/files/releases/4.0/laragon-full.exe
 Puedes guiarte del siguient video para la instalación: https://www.youtube.com/watch?v=NKWKtFF6y3Y
 
