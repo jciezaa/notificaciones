@@ -16,6 +16,16 @@ El siguiente proyecto se basa en brindar soporte al área de registros académic
 
 Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.
 
+## Instalación para funcionamiento
+
+# Preparar entorno local
+
+# Instalación de Laragon
+Descargar e instalar Laragon: https://sourceforge.net/projects/laragon/files/releases/4.0/laragon-full.exe
+Puedes guiarte del siguient video para la instalación: https://www.youtube.com/watch?v=NKWKtFF6y3Y
+
+
+
 ## Creadores
 
 Jesús Cieza Arteaga
