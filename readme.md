@@ -14,6 +14,20 @@ Características:
 
 Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.
 
+## Instalación para funcionamiento
+
+### Preparar entorno local
+
+#### Instalación de Laragon y Composer
+  Descargar e instalar Laragon: https://sourceforge.net/projects/laragon/files/releases/4.0/laragon-full.exe
+  
+  Descargar e instalar composer: https://getcomposer.org/Composer-Setup.exe
+
+  *Puedes guiarte del siguient video para la instalación: https://www.youtube.com/watch?v=NKWKtFF6y3Y
+
+#### Instalación de Composer
+  
+
 ## Creadores
 
 Jesús Cieza Arteaga
