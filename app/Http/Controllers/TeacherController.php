@@ -15,16 +15,13 @@ use App\Email;
 use Maatwebsite\Excel\Facades\Excel;
 
 
-
-
 class TeacherController extends Controller
 {
     
     public function index(){
     	$teachers = Teacher::all();
-        //dd($teachers);
-        if($teachers->count() > 0){
 
+        if($teachers->count() >= 5){
             $teachers = $teachers->random(5);          
     	       return view('emails.config.data')->with(compact('teachers'));
         }
@@ -80,7 +77,6 @@ class TeacherController extends Controller
 	public function mail(){	
 
     	set_time_limit(0);
-
     	//Sólo lista los emails de docentes dentro de la base de datos
         $teachers = Teacher::select('email as email')->distinct()->get();
 

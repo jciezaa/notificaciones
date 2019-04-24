@@ -234,7 +234,7 @@
                                         <p style="line-height: 24px; margin-bottom:20px;">
                                             {{ $confemail->segundoparrafo }}{{-- Para consultar el rol de evaluaciones de cada alumno puede seguir la ruta: --}} </br>
 
-                                            <a href="">Intranet / Alumnos / Rol de exámenes</a>
+                                            <a href="https://matricula.upc.edu.pe/loginupc/oauth/login">Intranet / Alumnos / Rol de exámenes</a>
                                         </p>
 
                                         <table border="0" width="590" align="center" cellpadding="0" cellspacing="0" class="table table-sm container590">

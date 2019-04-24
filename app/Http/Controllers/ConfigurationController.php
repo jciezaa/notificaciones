@@ -22,6 +22,17 @@ class ConfigurationController extends Controller
 
 	}
 
+	public function indexNotificar(){
+
+		$teachers = Teacher::select('email as email')->distinct()->get()->count();
+		$correoAlumnos = Teacher::select('correoAlumno as email')->distinct()->get()->count();
+
+		$tiempo = round($teachers/7)*1000;
+
+		return view('notificar')->with(compact('tiempo'));
+
+	}
+
 	public function confDataBase(){
 
 				
@@ -40,7 +51,8 @@ class ConfigurationController extends Controller
 
 		$teachers = Teacher::select('email as email')->distinct()->get()->count();
 		$correoAlumnos = Teacher::select('correoAlumno as email')->distinct()->get()->count();
-		$tiempo = $teachers/5;
+		$tiempo = round($teachers/7);
+
 
 		return view('resumen')->with(compact('teachers','correoAlumnos','tiempo'));
 

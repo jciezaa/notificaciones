@@ -7,6 +7,8 @@
         @include('errors.alertas')
       <!-- Incluir alertas -->
 	
+
+
 	<div class="row">
 		
 		<div class="col-md-4 d-flex align-items-stretch">
@@ -38,7 +40,7 @@
 				  <div class="card-header">TIEMPO ESTIMADO</div>
 				  <div class="card-body">
 				    <h2 class="card-title">{{ $tiempo }}</h2>
-				    <p class="card-text">Minutos es el tiempo estimado para la notificación de {{ $teachers}} docentes y {{ $correoAlumnos }} alumnos.</p>
+				    <p class="card-text">Minuto(s) es el tiempo estimado para la notificación de {{ $teachers}} docentes y {{ $correoAlumnos }} alumnos.</p>
 				  </div>
 				</div>
 		</div>
