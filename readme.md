@@ -15,8 +15,15 @@ Características:
 ## Clonar repositorio
 
 - Iniciar CMD (Consola de comandos).
-- Situarse en la ruta "C:\laragon\www"
+- Situarse en la ruta: cd "C:\laragon\www"
 - Clonar repositorio con el comando: git clone https://github.com/jciezaa/notificaciones.git
+
+## Actualización de repositorio
+
+- Situarse en la ruta "C:\laragon\www\notificaciones"
+- Ejecutar <code> Composer update </code>
+- Ejecutar <code> Composer dump-autoload </code>
+- Ejecutar <code> php artisan key:generate </code>
 
 Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.
   
