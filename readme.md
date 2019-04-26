@@ -14,13 +14,13 @@ Características:
 
 ## Clonar repositorio
 
-- Iniciar CMD (Consola de comandos).
-- Situarse en la ruta: cd "C:\laragon\www"
-- Clonar repositorio con el comando: git clone https://github.com/jciezaa/notificaciones.git
+- Iniciar <strong> CMD (Consola de comandos). </strong>
+- Situarse en la ruta: <strong> cd "C:\laragon\www" </strong>
+- Clonar repositorio con el comando: <code> git clone https://github.com/jciezaa/notificaciones.git </code>
 
 ## Actualización de repositorio
 
-- Situarse en la ruta "C:\laragon\www\notificaciones"
+- Situarse en la ruta <strong> "C:\laragon\www\notificaciones" </strong>
 - Ejecutar <code> Composer update </code>
 - Ejecutar <code> Composer dump-autoload </code>
 - Ejecutar <code> php artisan key:generate </code>
