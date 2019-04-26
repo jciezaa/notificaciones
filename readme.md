@@ -1,16 +1,16 @@
 ## Sobre Predator
 
-El siguiente proyecto se basa en brindar soporte al área de registros académicos para el equipo de programación:
+<p> El siguiente proyecto se basa en brindar soporte al área de registros académicos para el equipo de programación. </p>
 
-Características:
+<strong> Características: </strong>
 
 - Envío masivo de Emails con un aplantilla predefinida para la notificaciones de cruces.
 - Generación y comprobación de horarios para evaluaciones escritas.
 
 ## Instalación de entorno
 
-- Instalación de Laragon: https://laragon.org/download/
-- Instalación de Composer: https://getcomposer.org/download/
+- Instalación de Laragon: <code> https://laragon.org/download/ </code>
+- Instalación de Composer: <code> https://getcomposer.org/download/ </code>
 
 ## Clonar repositorio
 
@@ -32,4 +32,3 @@ Predator es un sistema desarrollado con el framework Laravel y base de datos MyS
 
 Jesús Cieza Arteaga
 
-[Jesús Cieza Arteaga]
