@@ -37,13 +37,13 @@
 - Asegurar la siguiente configuración importante:
 
 <code>
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.office365.com
-MAIL_PORT=587
-MAIL_FROM_NAME='JUANITO PEREZ'
-MAIL_USERNAME='JUANITO.PEREZ@JUANITO.PE'
-MAIL_PASSWORD='********'
-MAIL_ENCRYPTION=tls
+MAIL_DRIVER=smtp </br>
+MAIL_HOST=smtp.office365.com </br>
+MAIL_PORT=587 </br>
+MAIL_FROM_NAME='JUANITO PEREZ' </br>
+MAIL_USERNAME='JUANITO.PEREZ@JUANITO.PE' </br>
+MAIL_PASSWORD='********' </br>
+MAIL_ENCRYPTION=tls </br>
 </code>
 
 
