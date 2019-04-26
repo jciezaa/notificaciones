@@ -32,14 +32,14 @@ class Notificacion extends Mailable
         ->where('campo','REMITENTE')->get()->first();
 
         //Retornar vista del mensaje con sus variables
-        return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
-        ->from($confsender->email,$confsender->name)
-        ->subject($confemail->asunto);
+        // return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
+        // ->from($confsender->email,$confsender->name)
+        // ->subject($confemail->asunto);
 
         //Retornar vista del mensaje con sus variables [Con Remitente desde archivo .ENV]
-        // return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
-        // ->from(env('MAIL_USERNAME'),env('MAIL_FROM_NAME'))
-        // ->subject($confemail->asunto);
+        return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
+        ->from(env('MAIL_USERNAME'),env('MAIL_FROM_NAME'))
+        ->subject($confemail->asunto);
 
     }
 }

@@ -20,10 +20,32 @@
 
 ## Actualización de repositorio
 
+- Iniciar <strong> CMD (Consola de comandos). </strong>
 - Situarse en la ruta <strong> "C:\laragon\www\notificaciones" </strong>
 - Ejecutar <code> Composer update </code>
 - Ejecutar <code> Composer dump-autoload </code>
 - Ejecutar <code> php artisan key:generate </code>
+
+## Migración de Base de datos
+
+- Iniciar <strong> CMD (Consola de comandos). </strong>
+- Situarse en la ruta <strong> "C:\laragon\www\notificaciones" </strong>
+- Ejecutar <code> php artisan migrate:refresh --seed </code>
+
+## Configuración de archivo .ENV
+
+- Asegurar la siguiente configuración importante:
+
+<code>
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.office365.com
+MAIL_PORT=587
+MAIL_FROM_NAME='JUANITO PEREZ'
+MAIL_USERNAME='JUANITO.PEREZ@JUANITO.PE'
+MAIL_PASSWORD='********'
+MAIL_ENCRYPTION=tls
+</code>
+
 
 Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.
   
