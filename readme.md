@@ -36,28 +36,31 @@
 
 - Asegurar la siguiente configuración importante:
 
-<code>
-MAIL_DRIVER=smtp </br>
+<code>MAIL_DRIVER=smtp </code>
 
-MAIL_HOST=smtp.office365.com </br>
+<code> MAIL_HOST=smtp.office365.com </code>
 
-MAIL_PORT=587 </br>
+<code> MAIL_PORT=587 </code>
 
-MAIL_FROM_NAME='JUANITO PEREZ' </br>
+<code> MAIL_FROM_NAME='JUANITO PEREZ' </code>
 
-MAIL_USERNAME='JUANITO.PEREZ@JUANITO.PE' </br>
+<code> MAIL_USERNAME='JUANITO.PEREZ@JUANITO.PE' </code>
 
-MAIL_PASSWORD='********' </br>
+<code> MAIL_PASSWORD='********' </code>
 
-MAIL_ENCRYPTION=tls </br>
+<code> MAIL_ENCRYPTION=tls </code>
 
-</code>
+## Correr Predator
+
+Acceder a la ruta en el navegador web:
+
+<strong> notificaciones.test</strong>
+
+Configurar la base de datos, copia oculta y parámetros de la plantilla de correo electrónico.
 
 
-Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.
-  
 
-## Creadores
 
+## Créditos
 Jesús Cieza Arteaga
-
+Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.  
