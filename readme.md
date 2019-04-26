@@ -25,4 +25,4 @@ Predator es un sistema desarrollado con el framework Laravel y base de datos MyS
 
 Jesús Cieza Arteaga
 
-![Jesús Cieza Arteaga](https://avatars2.githubusercontent.com/u/11559504?s=400&u=5ca91df78a6f7b92639ab03463cf096125a8f4b5&v=4  "Jesús Cieza Arteaga")
+[Jesús Cieza Arteaga]
