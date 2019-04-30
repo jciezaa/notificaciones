@@ -23,7 +23,7 @@ class Teacher extends Migration
             $table->string('seccion');
             $table->string('medio');
             $table->string('alumno');
-            $table->string('correoAlumno');
+            $table->string('correoalumno');
             $table->string('apellidos');
 
             $table->timestamps();

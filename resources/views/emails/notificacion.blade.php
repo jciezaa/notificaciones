@@ -226,8 +226,8 @@
                                         <ol style="line-height: 24px;margin-bottom:15px;">
 
                                             <li>Exonerarlos de la sustentaci&oacute;n.</li>
-                                            <li>Dar facilidades a los alumnos para que sustenten su TF en la &uacute;ltima clase.</li>
-                                            <li>Dar facilidades a los alumnos para que sustenten su TF en horas determinadas (dentro de su programaci&oacute;n de ex&aacute;menes finales).</li>
+                                            <li>Dar facilidades a los alumnos para que sustenten su TP en la semana 9.</li>
+                                            <li>Dar facilidades a los alumnos para que sustenten su TP en horas determinadas (dentro de su programaci&oacute;n de ex&aacute;menes parciales, como primer o último grupo).</li>
                                         </ol>
 
 
