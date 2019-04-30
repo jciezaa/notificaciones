@@ -63,4 +63,5 @@ Configurar la base de datos, copia oculta y parámetros de la plantilla de corre
 
 ## Créditos
 Jesús Cieza Arteaga
+
 Predator es un sistema desarrollado con el framework Laravel y base de datos MySql.  
