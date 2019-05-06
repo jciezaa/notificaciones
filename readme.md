@@ -11,6 +11,8 @@
 
 - Instalación de Laragon: <code> https://laragon.org/download/ </code>
 - Instalación de Composer: <code> https://getcomposer.org/download/ </code>
+- Instalación de GIT: <code> https://git-scm.com/ </code>
+- Reiniciar equipo.
 
 ## Clonar repositorio
 
@@ -25,6 +27,13 @@
 - Ejecutar <code> Composer update </code>
 - Ejecutar <code> Composer dump-autoload </code>
 - Ejecutar <code> php artisan key:generate </code>
+
+## Crear base de datos "notificaciones"
+
+- Acceder a Laragon
+- Iniciar Laragon
+- Acceder a la pestaña base de datos y abrir.
+- Crear base de datos con nombre: <strong> notificaciones </strong>
 
 ## Migración de Base de datos
 
