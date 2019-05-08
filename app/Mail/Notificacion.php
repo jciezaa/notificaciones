@@ -26,18 +26,14 @@ class Notificacion extends Mailable
     {
         //Obtener configuracion del correo
         $confemail = Email::get()->first();
-        //Obtener Remitente
-        $confsender = DB::table('configurations')
-        ->select('valorOne as name','valorTwo as email')
-        ->where('campo','REMITENTE')->get()->first();
-
-        //Retornar vista del mensaje con sus variables
-        // return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
-        // ->from($confsender->email,$confsender->name)
-        // ->subject($confemail->asunto);
-
+        
+        //Obtener facilidades
+        $confFacilities = DB::table('configurations')
+        ->select('valorOne as name')
+        ->where('campo','FACILIDAD')->get()->toArray();
+        
         //Retornar vista del mensaje con sus variables [Con Remitente desde archivo .ENV]
-        return $this->view('emails.notificacion')->with(compact('cursos','confemail'))            
+        return $this->view('emails.notificacion')->with(compact('cursos','confemail','confFacilities'))            
         ->from(env('MAIL_USERNAME'),env('MAIL_FROM_NAME'))
         ->subject($confemail->asunto);
 

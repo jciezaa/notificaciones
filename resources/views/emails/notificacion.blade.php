@@ -223,13 +223,11 @@
                                             {{ $confemail->primerparrafo }}{{-- Para consultar y notificarle sobre los alumnos de su asignatura que tienen CRUCES DE EXÁMENES. Puede considerar alguna de las siguientes opciones para poder brindarle facilidades: --}}
                                         </p>
 
-                                        <ol style="line-height: 24px;margin-bottom:15px;">
-
-                                            <li>Exonerarlos de la sustentaci&oacute;n.</li>
-                                            <li>Dar facilidades a los alumnos para que sustenten su TP en la semana 9.</li>
-                                            <li>Dar facilidades a los alumnos para que sustenten su TP en horas determinadas (dentro de su programaci&oacute;n de ex&aacute;menes parciales, como primer o último grupo).</li>
+                                        <ol style="line-height: 24px;margin-bottom:15px;">                                                                                                                        
+                                            <li>{{$confemail->facilidad1}}</li>
+                                            <li>{{$confemail->facilidad2}}</li>
+                                            <li>{{$confemail->facilidad3}}</li>
                                         </ol>
-
 
                                         <p style="line-height: 24px; margin-bottom:20px;">
                                             {{ $confemail->segundoparrafo }}{{-- Para consultar el rol de evaluaciones de cada alumno puede seguir la ruta: --}} </br>

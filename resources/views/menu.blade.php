@@ -17,6 +17,4 @@
     <a @if(request()->is('notificar')) class="nav-link active" @endif class="nav-link" href="/notificar">Notificar</a>
   </li>
 
-
-
 </ul>

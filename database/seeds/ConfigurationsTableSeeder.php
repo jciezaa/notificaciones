@@ -12,13 +12,8 @@ class ConfigurationsTableSeeder extends Seeder
      */
     public function run()
     {
+        
          Configuration::create([
-            'campo' => 'REMITENTE',
-            'valorOne' => 'ALIVER MEZA RODRIGUEZ',
-            'valorTwo' => 'ALIVER.MEZA@UPC.PE'
-        ]);
-
-        Configuration::create([
             'campo' => 'BBC',
             'valorOne' => 'ZULEYMA.FLORES@UPC.PE'
 

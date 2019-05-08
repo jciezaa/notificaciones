@@ -8,12 +8,9 @@
         @include('errors.alertas')
       <!-- Incluir alertas -->
 
-
-
             <div class="row">
 
                 <div class="col">
-
 
                     <form action="" method="POST">  
                     {{csrf_field()}}  
@@ -30,10 +27,6 @@
                             </div>
                         </fieldset>
                     </form>
-
-                        
-
-
 
                         <fieldset>
                             <h3>Copia Oculta</h3>
@@ -117,7 +110,6 @@
                 </div>
 
             </div>
-
 
     @endsection
 

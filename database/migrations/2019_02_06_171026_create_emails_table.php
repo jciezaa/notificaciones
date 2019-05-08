@@ -20,6 +20,9 @@ class CreateEmailsTable extends Migration
             $table->string('saludoinicial')->nullable();
             $table->string('primerparrafo')->nullable();
             $table->string('segundoparrafo')->nullable();
+            $table->string('facilidad1')->nullable();
+            $table->string('facilidad2')->nullable();
+            $table->string('facilidad3')->nullable();
             $table->string('saludofinal')->nullable();
             $table->string('firma')->nullable();            
             $table->timestamps();
