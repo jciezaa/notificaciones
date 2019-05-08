@@ -7,12 +7,8 @@
         @include('errors.alertas')
       <!-- Incluir alertas -->
 
-
-
     <div class="row">
-
         <div class="col-md-12">
-
             <form action="/configuraciones/email" method="POST">  
             {{csrf_field()}}  
 
@@ -30,13 +26,13 @@
                     <textarea class="form-control" name="primerParrafo" rows="3">{{ $confemail->primerparrafo }}</textarea> 
                     
                     <label for="facilidad1">Primera facilidad</label>
-                    <input class="form-control" name="segundoParrafo" value="{{ $confemail->facilidad1}}"> 
+                    <input class="form-control" name="facilidad1" value="{{ $confemail->facilidad1}}"> 
                     
                     <label for="facilidad2">Segunda facilidad</label>
-                    <input class="form-control" name="segundoParrafo" value="{{ $confemail->facilidad2}}"> 
+                    <input class="form-control" name="facilidad2" value="{{ $confemail->facilidad2}}"> 
 
                     <label for="facilidad3">Tercera facilidad</label>
-                    <textarea class="form-control" name="segundoParrafo" rows="3">{{ $confemail->facilidad3}}</textarea>
+                    <textarea class="form-control" name="facilidad3" rows="3">{{ $confemail->facilidad3}}</textarea>
 
                     <label for="segundoParrafo">Segundo párrafo</label>
                     <textarea class="form-control" name="segundoParrafo" rows="3">{{ $confemail->segundoparrafo}}</textarea> 
@@ -47,7 +43,7 @@
                     <label for="firma">Firma</label>
                     <input type="text" class="form-control" name="firma"  placeholder="Ingresa la firma del mensaje" value="{{ $confemail->firma }}">
                 </div>
-                    <small id="emailHelp" class="form-text text-muted">El email se enviará a todos los destinatarios con asunto y mensaje que se encuentre registrada en esta configuración.</small><br>
+                    <small id="emailHelp" class="form-text text-muted" style="background-color: black">El email se enviará a todos los destinatarios con asunto y mensaje que se encuentre registrada en esta configuración.</small><br>
 
                 <div class="form-group">
                     <button class="btn btn-primary">Guardar Cambios</button>
@@ -55,7 +51,6 @@
             </fieldset>
             </form>
                     
-
         </div>
 
     </div>

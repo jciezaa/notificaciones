@@ -40,10 +40,12 @@ class EmailController extends Controller
     //   ]);
 
     $email = Email::find(1);
-    //dd($email);
     $email->asunto = $request->input('asunto');
     $email->saludoinicial = $request->input('saludoinicial');
     $email->primerparrafo = $request->input('primerParrafo');
+    $email->facilidad1 = $request->input('facilidad1');
+    $email->facilidad2 = $request->input('facilidad2');
+    $email->facilidad3 = $request->input('facilidad3');
     $email->segundoparrafo = $request->input('segundoParrafo');
     $email->saludofinal = $request->input('saludoFinal');
     $email->firma = $request->input('firma');
