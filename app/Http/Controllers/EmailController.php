@@ -19,9 +19,6 @@ class EmailController extends Controller
   }
 
 
-
-
-
   //	UPDATE EMAIL
 
   public function updateEmail(Request $request)
@@ -51,7 +48,7 @@ class EmailController extends Controller
     $email->firma = $request->input('firma');
     $email->save();
 
-    return back()->with('notification', 'Plantilla de Email actualizado');
+    return back()->with('notification', 'Plantilla de Email actualizada correctamente');
 
     // END UPDATE EMAIL
   }

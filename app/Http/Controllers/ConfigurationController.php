@@ -34,7 +34,6 @@ class ConfigurationController extends Controller
 	}
 
 	public function confDataBase(){
-
 				
 		return view('emails.config.data');
 	}
@@ -51,41 +50,17 @@ class ConfigurationController extends Controller
 
 		$teachers = Teacher::select('email as email')->distinct()->get()->count();
 		$correoAlumnos = Teacher::select('correoAlumno as email')->distinct()->get()->count();
-		$tiempo = round($teachers/7);
 
+		if($teachers < 7)
+			$tiempo = 1;
+		else
+			$tiempo = round($teachers/7);
 
 		return view('resumen')->with(compact('teachers','correoAlumnos','tiempo'));
 
 		}
 
-
-//	UPDATE REMITENTE
-
-	public function updateSender( Request $request){
-
-			$this->validate($request, [
-		            'name' => 'max:255|min:5',
-		            'email'=> 'max:255|min:5|email',
-		    ], [
-		            'name.max' => 'Por favor ingrese sólo nombre completo.',
-		            'name.min' => 'Por favor ingrese un nombre completo válido.',
-		            'email.max' => 'Por favor ingrese un email completo válido.',
-		            'email.min' => 'Por favor ingrese un email completo válido.',
-		            'email' => 'Ingrese un email valido'
-
-		    ]);
-
-	        $sender = Configuration::find(1);
-			$sender->valorOne = $request->input('name');
-			$sender->valorTwo = $request->input('email');
-			$sender->save();
-
-        return redirect(url('/configuraciones'))->with('notification','Remitente modificado exitosamente');
-
- // END UPDATE REMITENTE
-
-	}
-
+		
 //REGISTRO DE DESTINATARIOS EN COPIA OCULTA
 	public function createBBC(Request $request){
 

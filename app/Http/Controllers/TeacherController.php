@@ -63,7 +63,6 @@ class TeacherController extends Controller
                     $teacher->apellidos		= $row['apellidos'];
                     $teacher->save();
  
-
                 }
             });
 

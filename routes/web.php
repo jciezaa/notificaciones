@@ -10,7 +10,6 @@ Route::get('resumen', 'ConfigurationController@resumen');
 Route::get('notificar', 'ConfigurationController@indexNotificar');
 Route::post('notificacion', 'TeacherController@mail');
 
-Route::get('configuraciones', 'ConfigurationController@indexConfig');
 Route::get('reporte', 'ConfigurationController@indexConfig');
 
 //Ruta para importar CVS

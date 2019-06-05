@@ -17,7 +17,7 @@
 				  <div class="card-header">DOCENTES</div>
 				  <div class="card-body">
 				    <h2 class="card-title">{{ $teachers}}</h2>
-				    <p class="card-text">Serán notificacos vía correo.</p>
+				    <p class="card-text">Serán notificados vía correo.</p>
 				  </div>
 				</div>
 			

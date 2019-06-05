@@ -14,7 +14,11 @@
                         <fieldset>
                             <h3 align="center">Adjuntar base de datos</h3>
 
-<div class="alert alert-warning" role="alert">Debes adjuntar un archivo Excel con las siguientes columnas como cabecera: <br> docente, email, asignatura, descripcion, seccion, medio, alumno, correoalumno, apellidos.</div><br>
+                          <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">Lee atentamente!</h4>
+                            <p>Debes adjuntar un archivo Excel con las siguientes columnas como cabecera: <br> docente, email, asignatura, descripcion, seccion, medio, alumno, correoalumno, apellidos.</p>
+                            <hr>
+                          </div>
  
                         <form action="/importarDatabase" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
