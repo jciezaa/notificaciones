@@ -44,7 +44,7 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link" href="/notificaciones/resumen">Notificaciones</a>
+            <a class="nav-link" href="/notificaciones">Notificaciones</a>
           </li>
 
           <li class="nav-item">
@@ -91,8 +91,16 @@
     <div class="row">
 
       <div class="col-md-2">
-            @include('menu')
-      </div>
+
+          @if(request()->is('notificaciones','configuraciones/notificaciones/data','configuraciones/notificaciones/copiaoculta','configuraciones/notificaciones/email','notificaciones/notificar'))
+            @include('menuNotificaciones')
+          @endif
+
+          @if(request()->is('planificacion','configuraciones/planificacion/data'))
+            @include('menuPlanificacion')
+          @endif
+
+        </div>
 
       <div class="col-md-10">
             @yield('content')
