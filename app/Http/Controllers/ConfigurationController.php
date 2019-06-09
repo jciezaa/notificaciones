@@ -60,6 +60,23 @@ class ConfigurationController extends Controller
 
 		}
 
+
+		public function planificacion(){
+
+			return view('planificacion');
+	
+			}
+
+
+
+
+
+
+
+
+
+
+
 		
 //REGISTRO DE DESTINATARIOS EN COPIA OCULTA
 	public function createBBC(Request $request){

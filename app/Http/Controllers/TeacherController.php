@@ -23,15 +23,15 @@ class TeacherController extends Controller
 
         if($teachers->count() >= 5){
             $teachers = $teachers->random(5);          
-    	       return view('emails.config.data')->with(compact('teachers'));
+    	       return view('emails.config..data')->with(compact('teachers'));
         }
 
-        return view('emails.config.data')->with(compact('teachers'));
+        return view('emails.config..data')->with(compact('teachers'));
     
     }
 
     public function importarDatabase(Request $request){
-
+        //Validar archivo Excel cargado
         $this->validate($request, [
                     'excel' => 'required|mimes:xls,xlsx',
                    
@@ -40,7 +40,6 @@ class TeacherController extends Controller
                     'excel.mimes' => 'Sólo puedes adjuntar archivos de Excel.',
             ]);
  	    	
-
     	if($request->hasFile('excel')){            
 
             \Excel::load($request->file('excel')->getRealPath(), function ($reader)
@@ -66,10 +65,10 @@ class TeacherController extends Controller
                 }
             });
 
-            return redirect('configuraciones/data')->with('notification','La base de datos se adjuntó correctamente');
+            return redirect('configuraciones/notificaciones/data')->with('notification','La base de datos se adjuntó correctamente');
         }
 
-        return redirect('configuraciones/data')->with('alerta','Por favor selecciona un archivo válido');
+        return redirect('configuraciones/notificaciones/data')->with('alerta','Por favor selecciona un archivo válido');
     }
 
 
@@ -100,7 +99,7 @@ class TeacherController extends Controller
 	       
 	}
 
-	return redirect(url('/'))->with('notification','Notificaciones realizadas correctamente');
+	return redirect(url('/notificaciones/resumen'))->with('notification','Notificaciones realizadas correctamente');
 
 }
 

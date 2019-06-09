@@ -44,11 +44,15 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link" href="/resumen">Notificaciones</a>
+            <a class="nav-link" href="/notificaciones/resumen">Notificaciones</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="/incidencias">Incidencias</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/planificacion">Planificación Horaria</a>
           </li>
 
           <li class="nav-item">

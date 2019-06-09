@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <form action="/configuraciones/email" method="POST">  
+            <form action="/configuraciones/notificaciones/email" method="POST">  
             {{csrf_field()}}  
 
             <fieldset>

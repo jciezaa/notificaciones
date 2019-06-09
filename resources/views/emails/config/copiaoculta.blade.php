@@ -10,7 +10,7 @@
 
             <div class="col-md-12">
                 <fieldset>
-                    <form action="/configuraciones/copiaoculta" method="POST">  
+                    <form action="/configuraciones/notificaciones/copiaoculta" method="POST">  
                     {{csrf_field()}}  
                         
                             <h3>Copia Oculta</h3>
@@ -40,7 +40,7 @@
                                 <th scope="row">{{ $key+1 }}</th>
                                 <td>{{ $confbbc->valorOne }}</td>
                                 <td>
-                                <a href="/configuraciones/copiaoculta/{{ $confbbc->id}}/eliminar" class="btn btn-danger btn-sm" title="Eliminar">
+                                <a href="/configuraciones/notificaciones/copiaoculta/{{ $confbbc->id}}/eliminar" class="btn btn-danger btn-sm" title="Eliminar">
                                                 <span class="fa fa-pencil">Eliminar</span>
                                 </a>
                                 </td>

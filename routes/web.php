@@ -1,23 +1,24 @@
 <?php
 
 Route::get('/', 'ConfigurationController@resumen');
-Route::get('resumen', 'ConfigurationController@resumen');
+Route::get('notificaciones/resumen', 'ConfigurationController@resumen');
+Route::get('planificacion', 'ConfigurationController@planificacion');
 
 //Para utilizarlo con etiquetas <a href="">
 //Route::get('/notificacion','TeacherController@mail');
 
 //Para utilizarlo con button
-Route::get('notificar', 'ConfigurationController@indexNotificar');
-Route::post('notificacion', 'TeacherController@mail');
+Route::get('notificaciones/notificar', 'ConfigurationController@indexNotificar');
+Route::post('notificaciones/notificacion', 'TeacherController@mail');
 
-Route::get('reporte', 'ConfigurationController@indexConfig');
+Route::get('notificaciones/reporte', 'ConfigurationController@indexConfig');
 
 //Ruta para importar CVS
-Route::post('importarDatabase', 'TeacherController@importarDatabase');
+Route::post('notificaciones/importarDatabase', 'TeacherController@importarDatabase');
 
-Route::get('configuraciones/data', 'TeacherController@index');
-Route::get('configuraciones/email', 'EmailController@confEmail');
-Route::post('configuraciones/email', 'EmailController@updateEmail');
-Route::get('configuraciones/copiaoculta', 'ConfigurationController@confBbc');
-Route::post('configuraciones/copiaoculta', 'ConfigurationController@createBBC');
-Route::get('configuraciones/copiaoculta/{id}/eliminar', 'ConfigurationController@deleteBBC');
+Route::get('configuraciones/notificaciones/data', 'TeacherController@index');
+Route::get('configuraciones/notificaciones/email', 'EmailController@confEmail');
+Route::post('configuraciones/notificaciones/email', 'EmailController@updateEmail');
+Route::get('configuraciones/notificaciones/copiaoculta', 'ConfigurationController@confBbc');
+Route::post('configuraciones/notificaciones/copiaoculta', 'ConfigurationController@createBBC');
+Route::get('configuraciones/notificaciones/copiaoculta/{id}/eliminar', 'ConfigurationController@deleteBBC');

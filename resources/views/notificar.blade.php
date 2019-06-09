@@ -33,7 +33,7 @@
         </div>
         <div class="modal-footer">
 
-          <form action="/notificacion" method="POST">
+          <form action="/notificaciones/notificacion" method="POST">
             {{csrf_field()}}
             <button class="btn btn-primary" onclick="move()">Aceptar</button>
             <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

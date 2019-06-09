@@ -20,7 +20,7 @@
                             <hr>
                           </div>
  
-                        <form action="/importarDatabase" method="POST" enctype="multipart/form-data">
+                        <form action="/notificaciones/importarDatabase" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
                            <div class="form-group">
                             <div class="input-group mb-3">
