@@ -2,7 +2,6 @@
 
 Route::get('/', 'ConfigurationController@resumen');
 Route::get('notificaciones', 'ConfigurationController@resumen');
-Route::get('planificacion', 'ConfigurationController@planificacion');
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,4 +21,3 @@ Route::post('configuraciones/notificaciones/copiaoculta', 'ConfigurationControll
 Route::get('configuraciones/notificaciones/copiaoculta/{id}/eliminar', 'ConfigurationController@deleteBBC');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('configuraciones/planificacion/aulas', 'TeacherController@index');

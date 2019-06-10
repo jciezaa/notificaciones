@@ -48,14 +48,6 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/incidencias">Incidencias</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/planificacion">Planificación Horaria</a>
-          </li>
-
-          <li class="nav-item">
             <a class="nav-link" href="">Guías</a>
           </li>
 
@@ -92,7 +84,7 @@
 
       <div class="col-md-2">
 
-          @if(request()->is('notificaciones','configuraciones/notificaciones/data','configuraciones/notificaciones/copiaoculta','configuraciones/notificaciones/email','notificaciones/notificar'))
+          @if(request()->is('/','notificaciones','configuraciones/notificaciones/data','configuraciones/notificaciones/copiaoculta','configuraciones/notificaciones/email','notificaciones/notificar'))
             @include('menuNotificaciones')
           @endif
 

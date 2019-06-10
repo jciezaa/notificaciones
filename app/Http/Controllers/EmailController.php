@@ -23,19 +23,6 @@ class EmailController extends Controller
 
   public function updateEmail(Request $request)
   {
-
-    // $this->validate($request, [
-    //           'name' => 'max:255|min:5',
-    //           'email'=> 'max:255|min:5|email',
-    //   ], [
-    //           'name.max' => 'Por favor ingrese sólo nombre completo.',
-    //           'name.min' => 'Por favor ingrese un nombre completo válido.',
-    //           'email.max' => 'Por favor ingrese un email completo válido.',
-    //           'email.min' => 'Por favor ingrese un email completo válido.',
-    //           'email' => 'Ingrese un email valido'
-
-    //   ]);
-
     $email = Email::find(1);
     $email->asunto = $request->input('asunto');
     $email->saludoinicial = $request->input('saludoinicial');

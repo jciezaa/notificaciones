@@ -67,17 +67,6 @@ class ConfigurationController extends Controller
 	
 			}
 
-
-
-
-
-
-
-
-
-
-
-		
 //REGISTRO DE DESTINATARIOS EN COPIA OCULTA
 	public function createBBC(Request $request){
 
