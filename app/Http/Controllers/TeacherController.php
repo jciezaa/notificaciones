@@ -99,7 +99,7 @@ class TeacherController extends Controller
 	       
 	}
 
-	return redirect(url('/notificaciones/resumen'))->with('notification','Notificaciones realizadas correctamente');
+	return redirect(url('/notificaciones'))->with('notification','Notificaciones realizadas correctamente');
 
 }
 

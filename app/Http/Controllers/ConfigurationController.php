@@ -45,7 +45,6 @@ class ConfigurationController extends Controller
 		return view('emails.config.copiaoculta')->with(compact('confbbc'));
 	}
 
-
 	public function resumen(){
 
 		$teachers = Teacher::select('email as email')->distinct()->get()->count();
@@ -60,12 +59,11 @@ class ConfigurationController extends Controller
 
 		}
 
-
-		public function planificacion(){
+	public function planificacion(){
 
 			return view('planificacion');
 	
-			}
+	}
 
 //REGISTRO DE DESTINATARIOS EN COPIA OCULTA
 	public function createBBC(Request $request){
